@@ -5,23 +5,30 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     public Rigidbody rbPlayer;
-    private bool isTrigger = false;
-    // public void OnCollisionEnter(Collision col)
-    // {
-    //     if(!isCollision){
-    //         if(col.gameObject.name == "Traffic Light Prefab"){
-    //             isCollision = true;
-    //         }
-    //     }
-    // }
-    public void OnTrigger(Collider col)
+    public GameObject trafficPanel;
+    bool isTrigger = false;
+    void doSomething()
     {
-        if(!isTrigger){
-            if(col.gameObject.name == "Traffic Light Prefab"){
-                isTrigger = true;
-                rbPlayer.velocity = new Vector3(0, 0, 0);
-                Debug.Log("anda melewati tempek");
-            }
+        Debug.Log("Ini berhasil");
+        // Reduce velocity
+        rbPlayer.velocity = new Vector3(0, 0, 0);
+        // Stop object
+        rbPlayer.isKinematic = true;
+        // Showing UI
+        trafficPanel.SetActive(true);
+    }
+    public void rightAnswer(){
+        trafficPanel.SetActive(false);
+        rbPlayer.isKinematic = false;
+    }
+    public void wrongAnswer(){
+        Debug.Log("Goblok anying!!");
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if(col.gameObject.name == "Traffic Light" && !isTrigger){
+            doSomething();
+            isTrigger = true;
         }
     }
 }

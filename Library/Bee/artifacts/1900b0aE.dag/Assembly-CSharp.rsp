@@ -362,6 +362,7 @@
 "Assets/Scripts/Cache/PlayerMovement.cs"
 "Assets/Scripts/Main Menu/MainMenu.cs"
 "Assets/Scripts/PlayerBehavior.cs"
+"Assets/Scripts/TrafficLight.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
